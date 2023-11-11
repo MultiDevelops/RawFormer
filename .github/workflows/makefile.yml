@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Install Dependencies
-        run: winget install git && winget install make && git clone https://github.com/Microsoft/vcpkg.git && .\vcpkg\bootstrap-vcpkg.bat && vcpkg install raylib:x64-windows && vcpkg integrate install && vcpkg install raylib
+        run: Invoke-Webrequest 'https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.2/Git-2.42.0.2-64-bit.exe' -OutFile 'Git-2.42.0.2-64-bit.exe'; ./Git-2.42.0.2-64-bit.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART /CLOSEAPPLICATIONS /RESTARTAPPLICATION && $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") && git clone https://github.com/Microsoft/vcpkg.git && .\vcpkg\bootstrap-vcpkg.bat && vcpkg install raylib:x64-windows && vcpkg integrate install && vcpkg install raylib
       
       - name: Build game
         run: make
