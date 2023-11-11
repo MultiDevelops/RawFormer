@@ -45,23 +45,9 @@ jobs:
   
       steps:
       - uses: actions/checkout@v3
-  
-      - name: Install git on windows
-        # You may pin to the exact commit or the version.
-        # uses: crazy-max/ghaction-chocolatey@0e015857dd851f84fcb7fb53380eb5c4c8202333
-        uses: crazy-max/ghaction-chocolatey@v3.0.0
-        with:
-          # Arguments to pass to Chocolatey
-          args: install git
 
       - name: Install Dependencies
-        run: git clone https://github.com/Microsoft/vcpkg.git && .\vcpkg\bootstrap-vcpkg.bat && vcpkg install raylib:x64-windows && vcpkg integrate install && vcpkg install raylib
-      
-      - name: Download & Build raylib
-        run: git clone https://github.com/raysan5/raylib.git raylib && cd raylib/src/ && make PLATFORM=PLATFORM_DESKTOP
-  
-      - name: Install raylib to runner
-        run: cd raylib/src/ && sudo make install
+        run: winget install git && winget install make && git clone https://github.com/Microsoft/vcpkg.git && .\vcpkg\bootstrap-vcpkg.bat && vcpkg install raylib:x64-windows && vcpkg integrate install && vcpkg install raylib
       
       - name: Build game
         run: make
