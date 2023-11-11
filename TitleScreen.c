@@ -1,4 +1,4 @@
-#include <raylib.h>
+#include "raylib.h"
 // Loads the title screen of the game.
 void titleScreen(int screenWidth, int screenHeight){
     BeginDrawing();
