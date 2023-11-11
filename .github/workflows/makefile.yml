@@ -16,15 +16,12 @@ jobs:
 
     - name: Install dependencies
       run: sudo apt install wget curl gcc clang cmake git build-essential libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev -y
-    
-    - name: Get raylib
-      run: wget https://github.com/raysan5/raylib/archive/refs/tags/4.2.0.tar.gz
 
-    - name: Extract raylib
-      run: tar xzf 4.2.0.tar.gz
+    - name: Download & Build raylib
+      run: git clone https://github.com/raysan5/raylib.git raylib && cd raylib/src/ && make PLATFORM=PLATFORM_DESKTOP
 
-    - name: Rename raylib folder
-      run: mv raylib-4.2.0 raylib
+    - name: Install raylib to runner
+      run: sudo make install
     
     - name: Build game
       run: make
