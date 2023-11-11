@@ -28,3 +28,12 @@ jobs:
 
     - name: Clean
       run: make clean
+
+      
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.3
+      with:
+        # Artifact name
+        name: Build (Linux x86_64)
+        
+        path: ./game
