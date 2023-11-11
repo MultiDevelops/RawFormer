@@ -45,9 +45,11 @@ jobs:
   
       steps:
       - uses: actions/checkout@v3
-
-      - name: Install Dependencies
-        run: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) && choco feature enable -n=allowGlobalConfirmation && choco install git && git clone https://github.com/Microsoft/vcpkg.git && .\vcpkg\bootstrap-vcpkg.bat && vcpkg install raylib:x64-windows && vcpkg integrate install && vcpkg install raylib
+      - name: vcpkg-action
+        uses: johnwason/vcpkg-action@v5
+        with:
+          # List of packages to build, separated by spaces. Cannot be used with manifest-dir
+          pkgs: raylib
       
       - name: Build game
         run: make
