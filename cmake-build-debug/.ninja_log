@@ -1,0 +1,27 @@
+# ninja log v5
+8	283	7213765041089984	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.obj	ed473d4d8af7d314
+0	72	7213765038977670	CMakeFiles/RawFormer.dir/main.c.obj	e949c3e35b51baa2
+38	1323	7213765051426179	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.obj	ad8e7bab0482e04b
+33	1315	7213765051356168	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj	df2a96865b55d56f
+23	1225	7213765050435991	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.obj	e405b8c89a6e56d4
+28	158	7213765039839704	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.obj	77cab4d6e96af2f7
+1323	2196	7213765060228365	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj	344b51bb78df0f98
+59	1270	7213765050926061	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj	3263216ade86cbd1
+1333	2308	7213765061355628	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj	f72aac250db5df0b
+4	697	7213765045214336	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj	a89f66f39d0a7473
+53	1332	7213765051496192	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj	b1e155a01809c067
+43	1358	7213765051816268	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.obj	f1d17f6ba6551fdc
+74	1370	7213765051946292	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj	f78f02aa0ab9c55f
+159	1413	7213765052381079	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj	5f9fdaec8c153c59
+48	1428	7213765052491110	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.obj	511fa8240238b5e0
+15	1429	7213765052501106	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.obj	5e8a60c4b9b9114c
+283	1583	7213765054083915	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.obj	4c9047796b5ed1cb
+11	1692	7213765055172592	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.obj	58a1fd875537efab
+697	1831	7213765056576602	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj	b643aaa62d2262eb
+1226	2140	7213765059669778	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj	a15d76fdca2d9607
+20	4156	7213765079733296	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.obj	ed0a22e7e5257d64
+1316	2215	7213765060412128	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj	d31fff9230f7886d
+1272	2293	7213765061195641	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj	443d3fe096330ae0
+2308	2377	7213765062045785	_deps/raylib-build/raylib/external/glfw/src/libglfw3.a	22b4b929e23c246c
+4156	4237	7213765080648108	_deps/raylib-build/raylib/libraylib.a	f9608a6cec53fab8
+4237	4380	7213765082028801	RawFormer.exe	1a1c8531e93499ac
