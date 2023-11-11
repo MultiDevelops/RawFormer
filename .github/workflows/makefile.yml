@@ -21,7 +21,7 @@ jobs:
       run: git clone https://github.com/raysan5/raylib.git raylib && cd raylib/src/ && make PLATFORM=PLATFORM_DESKTOP
 
     - name: Install raylib to runner
-      run: sudo make install
+      run: cd raylib/src/ && sudo make install
     
     - name: Build game
       run: make
