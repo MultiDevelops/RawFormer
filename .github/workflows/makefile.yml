@@ -50,6 +50,7 @@ jobs:
         with:
           # List of packages to build, separated by spaces. Cannot be used with manifest-dir
           pkgs: raylib
+          token: ${{ github.token }}
       
       - name: Build game
         run: make
