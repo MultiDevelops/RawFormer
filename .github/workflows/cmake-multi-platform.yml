@@ -47,7 +47,7 @@ jobs:
           - os: ubuntu-latest
             c_compiler: cl
           - os: macos-latest
-            c_compiler: cl
+            c_compiler: gcc
 
     steps:
     - uses: actions/checkout@v3
@@ -81,7 +81,7 @@ jobs:
 
     - name: Build
       # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
-      run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
+      run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }} && ls -R ./
 
     - name: Upload Artifact
       if: matrix.os == 'ubuntu-latest'
@@ -95,7 +95,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: 'Build (Windows x64)'
-        path: ${{ github.workspace }}\build\RawFormer.exe
+        path: ${{ steps.strings.outputs.build-output-dir }}/RawFormer.exe
     - name: Upload Artifact
       if: matrix.os == 'macos-latest'
       uses: actions/upload-artifact@v2
