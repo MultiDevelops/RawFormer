@@ -29,13 +29,8 @@ jobs:
         include:
           - os: windows-latest
             c_compiler: cl
-            cpp_compiler: cl
           - os: ubuntu-latest
-            c_compiler: gcc
-            cpp_compiler: g++
-          - os: macos-latest
             c_compiler: clang
-            cpp_compiler: clang++
 
     steps:
     - uses: actions/checkout@v3
@@ -52,10 +47,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y wget curl gcc clang cmake git build-essential libasound2-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev
-    - name: Install Dependencies
-      if: matrix.os == 'macos-latest'
-      run: |
-        brew install raylib && brew install cmake
       
 
     - name: Configure CMake
@@ -85,9 +76,3 @@ jobs:
       with:
         name: 'Build (Windows x64)'
         path: ${{ steps.strings.outputs.build-output-dir }}\RawFormer.exe
-    - name: Upload Artifact
-      if: matrix.os == 'macos-latest'
-      uses: actions/upload-artifact@v2
-      with:
-        name: 'Build (macOS)'
-        path: ${{ steps.strings.outputs.build-output-dir }}/RawFormer
