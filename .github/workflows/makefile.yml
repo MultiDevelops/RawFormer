@@ -45,13 +45,9 @@ jobs:
   
       steps:
       - uses: actions/checkout@v3
-      - name: vcpkg-action
-        uses: johnwason/vcpkg-action@v5
-        with:
-          # List of packages to build, separated by spaces. Cannot be used with manifest-dir
-          pkgs: raylib
-          token: ${{ github.token }}
-          triplet: x64-windows-release
+      
+      - name: Download & Build raylib
+        run: git clone https://github.com/raysan5/raylib.git raylib && cd raylib\src\ && make PLATFORM=PLATFORM_DESKTOP
       
       - name: Build game
         run: make
