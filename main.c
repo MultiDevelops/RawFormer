@@ -14,6 +14,7 @@
 ********************************************************************************************/
 
 #include "raylib.h"
+#include "Drawing.h"
 
 #if defined(PLATFORM_WEB)
 #include <emscripten/emscripten.h>
@@ -25,10 +26,8 @@
 int screenWidth = 800;
 int screenHeight = 450;
 // Vectors
-Vector2 playerPos;
+
 // Other Global Variables
-Texture2D playerTex;
-Image playerImage;
 
 //----------------------------------------------------------------------------------
 // Module Functions Declaration
@@ -40,11 +39,10 @@ void UpdateDrawFrame(void);     // Update and Draw one frame
 //----------------------------------------------------------------------------------
 int main()
 {
-    playerImage = LoadImage("res/gfx/player.png");
+
     // Initialization
     //--------------------------------------------------------------------------------------
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
-    playerTex = LoadTextureFromImage(playerImage);
 
 #if defined(PLATFORM_WEB)
     emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
@@ -81,10 +79,8 @@ void UpdateDrawFrame(void)
     //----------------------------------------------------------------------------------
     BeginDrawing();
 
-    ClearBackground(RAYWHITE);
-    DrawTextureV(playerTex, playerPos, WHITE);
 
-
+    titleScreen(screenWidth, screenHeight);
 
     EndDrawing();
     //----------------------------------------------------------------------------------
