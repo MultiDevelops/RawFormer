@@ -36,13 +36,6 @@ jobs:
           - os: macos-latest
             c_compiler: clang
             cpp_compiler: clang++
-        exclude:
-          - os: windows-latest
-            c_compiler: gcc
-          - os: macos-latest
-            c_compiler: clang
-          - os: ubuntu-latest
-            c_compiler: cl
 
     steps:
     - uses: actions/checkout@v3
@@ -62,7 +55,7 @@ jobs:
     - name: Install Dependencies
       if: matrix.os == 'macos-latest'
       run: |
-        sudo brew install raylib && sudo brew install cmake
+        brew install raylib && brew install cmake
       
 
     - name: Configure CMake
@@ -91,7 +84,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: 'Build (Windows x64)'
-        path: ${{ steps.strings.outputs.build-output-dir }}/RawFormer.exe
+        path: ${{ steps.strings.outputs.build-output-dir }}\RawFormer.exe
     - name: Upload Artifact
       if: matrix.os == 'macos-latest'
       uses: actions/upload-artifact@v2
