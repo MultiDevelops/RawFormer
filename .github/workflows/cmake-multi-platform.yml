@@ -80,11 +80,11 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: 'Build (Linux x86_64)'
-        path: ./RawFormer
+        path: ${{ steps.strings.outputs.build-output-dir }}/RawFormer
 
     - name: Upload Artifact
       if: matrix.os == 'windows-latest'
       uses: actions/upload-artifact@v2
       with:
         name: 'Build (Windows x64)'
-        path: ./RawFormer.exe
+        path: ${{ steps.strings.outputs.build-output-dir }}/RawFormer.exe
