@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Download & Build raylib
-        run: git clone https://github.com/raysan5/raylib.git raylib && cd raylib\src\ && make PLATFORM=PLATFORM_DESKTOP && $env:PATH = $env:PATH;D:\a\RawFormer\RawFormer\raylib\src
+        run: git clone https://github.com/raysan5/raylib.git raylib && cd raylib\src\ && make PLATFORM=PLATFORM_DESKTOP && Set-PathVariable AddPath 'D:\a\RawFormer\RawFormer'
       
       - name: Build game
         run: make
