@@ -77,11 +77,9 @@ void UpdateDrawFrame(void)
 
     // Draw
     //----------------------------------------------------------------------------------
-    BeginDrawing();
 
 
-    titleScreen(screenWidth, screenHeight);
-
-    EndDrawing();
+    //titleScreen(screenWidth, screenHeight);
+    gameLoader(screenWidth, screenHeight);
     //----------------------------------------------------------------------------------
 }

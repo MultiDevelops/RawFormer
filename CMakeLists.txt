@@ -28,7 +28,8 @@ add_executable(${PROJECT_NAME} src/
         Drawing.h
         Drawing.h
         main.c
-        Button.h)
+        Update.h
+)
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
 
